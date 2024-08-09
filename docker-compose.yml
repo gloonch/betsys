@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  question-database:
+    image: mysql:9.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    restart: always
+    command: ['mysqld', '--character-set-serverservice=utf8mb4', '--collation-serverservice=utf8mb4_unicode_ci']
+    environment:
+      MYSQL_ROOT_PASSWORD: betsys
+      MYSQL_DATABASE: betsys_db
+      MYSQL_USER: betsys
+      MYSQL_PASSWORD: betsys7
+
+volumes:
+  dbdata:

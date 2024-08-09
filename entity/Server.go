@@ -1,6 +1,7 @@
 package entity
 
 type Server struct {
-	ID      uint
-	clients []uint
+	ID   uint
+	Name string
+	//	TODO: add vacancy to have client register limit
 }
