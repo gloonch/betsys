@@ -10,7 +10,7 @@ services:
     restart: always
     command: ['mysqld', '--character-set-serverservice=utf8mb4', '--collation-serverservice=utf8mb4_unicode_ci']
     environment:
-      MYSQL_ROOT_PASSWORD: betsys
+      MYSQL_ROOT_PASSWORD: betsysRoot7
       MYSQL_DATABASE: betsys_db
       MYSQL_USER: betsys
       MYSQL_PASSWORD: betsys7

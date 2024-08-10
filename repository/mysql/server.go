@@ -7,7 +7,7 @@ import (
 
 // We have register for user to support different games
 func (d MySQLDB) Register(s entity.Server) (entity.Server, error) {
-	response, err := d.db.Exec(`insert into serverservice(name) values(?,)`, s.Name)
+	response, err := d.db.Exec(`insert into server(name) values(?)`, s.Name)
 	if err != nil {
 		return entity.Server{}, fmt.Errorf("cannot register serverservice: %w", err)
 	}

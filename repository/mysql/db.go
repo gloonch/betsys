@@ -3,6 +3,7 @@ package mysql
 import (
 	"database/sql"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"time"
 )
 
@@ -20,7 +21,7 @@ type MySQLDB struct {
 }
 
 func New(config Config) *MySQLDB {
-	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@(%s:%d)/%s)",
+	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@(%s:%d)/%s",
 		config.Username, config.Password, config.Host, config.Port, config.DBName))
 	if err != nil {
 		panic(fmt.Errorf("can't connect to database: %v", err))
